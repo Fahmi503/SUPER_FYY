@@ -1,0 +1,39 @@
+{
+  "name": "super-fyy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Universal AI Development Workspace, Project Memory Engine & Multi-Agent Coordination System",
+  "main": "dist/desktop/launcher.js",
+  "scripts": {
+    "build": "tsc && node -e \"import('node:fs').then(fs => { fs.cpSync('src/dashboard/public', 'dist/dashboard/public', { recursive: true, force: true }); fs.mkdirSync('dist/core/indexing/parsers', { recursive: true }); fs.cpSync('src/core/indexing/parsers/python_ast_extractor.py', 'dist/core/indexing/parsers/python_ast_extractor.py', { force: true }); })\"",
+    "test": "node --test dist/tests/**/*.test.js",
+    "start": "node dist/desktop/launcher.js",
+    "mcp": "node dist/mcp/server.js",
+    "demo:seed": "node scripts/seed_demo_workspace.js"
+  },
+  "keywords": [
+    "antigravity",
+    "memory-engine",
+    "knowledge-graph",
+    "mcp",
+    "multi-agent",
+    "workspace"
+  ],
+  "author": "Fahmi503",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fahmi503/SUPER_FYY.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fahmi503/SUPER_FYY/issues"
+  },
+  "homepage": "https://github.com/Fahmi503/SUPER_FYY#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0"
+  }
+}
